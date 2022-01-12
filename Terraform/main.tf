@@ -171,12 +171,12 @@ resource "aws_ecs_task_definition" "python_flask_task" {
   requires_compatibilities = ["FARGATE"]
   memory                   = "512"
   cpu                      = "256"
-  execution_role_arn       = "arn:aws:iam::710870128512:role/ecsTaskExecutionRole"		#make change here
+  execution_role_arn       = "arn:aws:iam::456123789456:role/ecsTaskExecutionRole"		#make change here
   container_definitions    = <<EOF
 [
   {
     "name": "python-flask",
-    "image": "710870128512.dkr.ecr.ap-south-1.amazonaws.com/python-flask:latest",		#make change here
+    "image": "456123789456.dkr.ecr.ap-south-1.amazonaws.com/python-flask:latest",		#make change here
     "memory": 512,
     "cpu": 256,
     "essential": true,
