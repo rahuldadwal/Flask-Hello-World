@@ -10,27 +10,27 @@ To run this application we need to follow these steps:
 	
 2 we need to build docker image
 
-#NOTE: Please change this image url "710870128512.dkr.ecr.ap-south-1.amazonaws.com" with correct image url
+#NOTE: Please change this image url "456123789456.dkr.ecr.ap-south-1.amazonaws.com" with correct image url
 #or we can copy these commands from ECR with correct image url
 
 -	to retrieve an authentication token and authenticate your Docker client to your registry
-	-	aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 710870128512.dkr.ecr.ap-south-1.amazonaws.com
+	-	aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 456123789456.dkr.ecr.ap-south-1.amazonaws.com
 	
 -	Build Docker image	
 	-	docker build -t python-flask .
 	
 -	tag image so we can push the image to this repository	
-	-	docker tag python-flask:latest 710870128512.dkr.ecr.ap-south-1.amazonaws.com/python-flask:latest
+	-	docker tag python-flask:latest 456123789456.dkr.ecr.ap-south-1.amazonaws.com/python-flask:latest
 	
 -	push this image to your newly created AWS repository	
-	-	docker push 710870128512.dkr.ecr.ap-south-1.amazonaws.com/python-flask:latest
+	-	docker push 456123789456.dkr.ecr.ap-south-1.amazonaws.com/python-flask:latest
 
 
 3 To deploy AWS 
 
 -	we need to make a change in terraform file "main.tf" in line number 173 and 178
-	-	in line number 173 you need to replace arn "arn:aws:iam::710870128512:role/ecsTaskExecutionRole" with correct arn  of ecsTaskExecutionRole 
-	-	in line number 178 you need to change image url "710870128512.dkr.ecr.ap-south-1.amazonaws.com/python-flask:latest" with correct image url
+	-	in line number 173 you need to replace arn "arn:aws:iam::456123789456:role/ecsTaskExecutionRole" with correct arn  of ecsTaskExecutionRole 
+	-	in line number 178 you need to change image url "456123789456.dkr.ecr.ap-south-1.amazonaws.com/python-flask:latest" with correct image url
 
 
 - Create IAM user with following policies attached
